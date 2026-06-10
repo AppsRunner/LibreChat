@@ -18,13 +18,27 @@ endpoints:
           - "deepseek/deepseek-r1"
           - "deepseek/deepseek-chat"
           - "anthropic/claude-3.5-sonnet"
+          - "anthropic/claude-4.5"
+          - "anthropic/claude-4.6"
+          - "anthropic/claude-4.5-haiku"
           - "google/gemini-2.5-pro"
-      fetch: true # Highly recommended: let it fetch your OpenRouter models automatically
+          - "google/gemini-2.0-flash"
+          - "openai/gpt-4o-mini"
+        fetch: false
       titleConvo: true
       titleModel: "deepseek/deepseek-chat"
-      dropParams: ["stop"] # Removed "user" from here
+      dropParams: ["stop", "user"]
       modelDisplayLabel: "OpenRouter"
 
 fileConfig:
   serverFileSizeLimit: 50
   avatarSizeLimit: 2
+  endpoints:
+    default:
+      fileSizeLimit: 50
+      supportedMimeTypes:
+        - "application/pdf"
+        - "application/msword"
+        - "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+        - "text/plain"
+        - "text/markdown"
