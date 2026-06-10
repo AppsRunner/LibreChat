@@ -11,13 +11,14 @@
 
 # EXAMPLE: if you want to use the config file and the latest numbered release docker image the result will be:
 
-# services:
-#   api:
-#     volumes:
-#     - type: bind
-#       source: ./librechat.yaml
-#       target: /app/librechat.yaml
-#     image: registry.librechat.ai/danny-avila/librechat:latest
+services:
+  api:
+    environment:
+      - OPENROUTER_KEY=${OPENROUTER_KEY} # Passes your .env key to the container
+    volumes:
+      - type: bind
+        source: ./librechat.yaml
+        target: /app/librechat.yaml
 
 # ---------------------------------------------------
 
