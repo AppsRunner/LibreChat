@@ -13,8 +13,6 @@
 
 services:
   api:
-    environment:
-      - OPENROUTER_KEY=${OPENROUTER_KEY} # Passes your .env key to the container
     volumes:
       - type: bind
         source: ./librechat.yaml
